@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Cadastro de Exercícios</h1>
+
+    <!-- mensagem flash -->
+    {% with messages = get_flashed_messages(with_categories=True) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category}}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+    <form action="{{ url_for('dash') }}" method="post">
+        <label>Nome do exercício:</label>
+        <input type="text" name="nome" placeholder="Nome">
+        <br>
+        <label>Descrição:</label>
+        <input type="text" name="descricao" placeholder="Descrição">
+        <br>
+        <button>Enviar</button>
+    </form>
+
+    <h2>Exercícios Cadastrados</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome do Exercício</th>
+                <th>Descrição</th>
+                <th>Usuário</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for exercicio in exercicios %}
+            <tr>
+                <td>{{ exercicio['nome'] }}</td>
+                <td>{{ exercicio['descricao'] }}</td>
+                <td>{{ exercicio['matricula'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <form action="{{ url_for('logout') }}" method="post">
+        <button>Sair</button>
+    </form>
+
+</body>
+</html>
