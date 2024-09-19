@@ -9,6 +9,6 @@ Flask-login 2.0:
 - Cadastro de Usuários (matrícula, email, senha)
 - Cadastro de Exercício físico (apenas para usuários logados)
 -- Exibe tabela no dashboard com Nome do exercício, Descrição, Usuário que cadastrou
-- Flash messages
 - Senha e e-mail criptografados
 - Login utilizando matrícula e senha
+- Flash messages
