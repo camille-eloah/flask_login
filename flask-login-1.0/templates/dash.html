@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Cadastro de Exercícios</h1>
+    <form action="{{ url_for('dash') }}" method="post">
+        <label>Nome do exercício:</label>
+        <input type="text" name="nome" placeholder="Nome">
+        <br>
+        <label>Descrição:</label>
+        <input type="text" name="descricao" placeholder="Descrição">
+        <br>
+        <button>Enviar</button>
+    </form>
+
+    <form action="{{ url_for('logout') }}" method="post">
+        <button>Sair</button>
+    </form>
+
+</body>
+</html>
